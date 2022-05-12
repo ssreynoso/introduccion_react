@@ -1,0 +1,16 @@
+.TodoTitle, .TodoCounter {
+    text-align: center;
+    margin-top: 0;
+}
+
+.TodoTitle {
+    font-weight: 500;
+}
+
+.TodoTitle--colorized {
+    color: indianred;
+}
+
+.TodoCounter {
+    font-weight: 400;
+}
