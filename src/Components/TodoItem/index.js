@@ -1,5 +1,5 @@
 import React from "react";
-import './index.css';
+import './TodoItem.css';
 import { FontAwesomeIcon        } from '@fortawesome/react-fontawesome';
 import { faSquareCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
 

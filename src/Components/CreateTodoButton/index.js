@@ -1,16 +1,19 @@
 import React from "react";
-import './index.css'
+import './CreateTodoButton.css'
+import { TodoContext } from "../../Context";
 
 function CreateTodoButton(props) {
 
-    const create_item = function () {
-        alert("Creación de un nuevo TODO");
-    }
+    const { setModal } = React.useContext(TodoContext);
+
+    // const create_item = function () {
+    //     alert("Creación de un nuevo TODO");
+    // }
 
     return (
         <button 
             className = "createTodoButton"
-            onClick   = { create_item }
+            onClick   = { () => setModal(true) }
         >
             {props.text}
         </button>

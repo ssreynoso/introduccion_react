@@ -1,0 +1,46 @@
+.Form {
+    height: 40vh;
+    width: 40vw;
+
+    padding: 0 20px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.Form-title {
+    text-align: center;
+}
+
+.Form-title--colorized {
+    color: indianred;
+}
+
+.Form-textarea{
+    height: 45%;
+    padding: 15px;
+    border-radius: 10px;
+    resize: none;
+}
+
+.Form-buttonsContainer {
+    display: flex;
+    justify-content: space-around;
+    height: 15%;
+}
+
+.Form-button {
+    border: none;
+    border-radius: 8px;
+    display: inline-block;
+    width: 40%;
+    cursor: pointer;
+    transition     : all .3s ease;
+    font-weight: 600;
+}
+
+.Form-button:hover{
+    background-color: indianred;   
+    color: white;
+}

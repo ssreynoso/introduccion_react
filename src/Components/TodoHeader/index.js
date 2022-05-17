@@ -1,7 +1,11 @@
 import React from "react";
-import './index.css';
+import './TodoHeader.css';
+import { TodoContext } from "../../Context";
 
-function TodoHeader({ completedTodos, totalTodos }) {
+function TodoHeader() {
+
+    const { completedTodos, totalTodos } = React.useContext(TodoContext);
+
     return (
         <>
             <h1 className="TodoTitle"><span className="TodoTitle--colorized">To Do</span> list</h1>
