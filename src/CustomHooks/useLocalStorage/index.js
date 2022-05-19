@@ -1,10 +1,8 @@
 import React from "react";
 
-const useLocalStorage = function(itemName, initialValue) {
+const useLocalStorage = function(itemName, initialValue, setLoading, setError) {
 
-    const [loading, setLoading] = React.useState(true);                  // Creo estado necesario
-    const [error,   setError  ] = React.useState(null);                  // Creo estado necesario
-    const [item,    setItem   ] = React.useState(initialValue);          // TODO's
+    const [item,    setItem] = React.useState(initialValue);          // TODO's
     
     React.useEffect( () => {
         
@@ -12,8 +10,6 @@ const useLocalStorage = function(itemName, initialValue) {
             try {
                 const localStorageItem = localStorage.getItem(itemName); // Obtengo los TODO's almacenados en localStorage
                 let parsedItem;
-
-                console.log(localStorageItem);
 
                 if (!localStorageItem) {                                            // Si no hay ningún valor almacenado
                     localStorage.setItem(itemName, JSON.stringify(initialValue));   // Establezco un valor por defecto en localStorage (en string)
@@ -30,7 +26,7 @@ const useLocalStorage = function(itemName, initialValue) {
             }
         }, 2000);
 
-    }, []);
+    });
 
     const saveItem = function(newItem) {
         try {
@@ -42,7 +38,7 @@ const useLocalStorage = function(itemName, initialValue) {
         }
     };
 
-    return { item, saveItem, loading, error };
+    return { item, saveItem };
 }
 
 export { useLocalStorage };

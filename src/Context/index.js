@@ -10,11 +10,10 @@ const TodoProvider = function(props) {
 
     // Creación de los estados con React Hooks -> React.useState();
 
-    const { item    : todos,
-            saveItem: setTodos,
-                      loading,
-                      error,
-        } = useLocalStorage(Constants.TODOS, []);
+    const [loading, setLoading] = React.useState(true);                  // Creo estado necesario
+    const [error,   setError] = React.useState(null);                  // Creo estado necesario
+
+    const { item: todos, saveItem: setTodos, } = useLocalStorage(Constants.TODOS, [], setLoading, setError);
 
     const [ searchValue, setSearchValue ] = React.useState("");
 
